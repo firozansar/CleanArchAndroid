@@ -3,14 +3,13 @@ package info.firozansari.presentation.view.adapter;
 
 import android.content.Context;
 
-import android.support.v7.widget.RecyclerView;
+import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import info.firozansari.presentation.R;
 import info.firozansari.presentation.model.UserModel;
@@ -82,7 +81,7 @@ public class UsersAdapter extends RecyclerView.Adapter<UsersAdapter.UserViewHold
   }
 
   static class UserViewHolder extends RecyclerView.ViewHolder {
-    @Bind(R.id.title) TextView textViewTitle;
+    @BindView(R.id.title) TextView textViewTitle;
 
     UserViewHolder(View itemView) {
       super(itemView);

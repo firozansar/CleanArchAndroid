@@ -1,7 +1,7 @@
 
 package info.firozansari.presentation.presenter;
 
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 import info.firozansari.domain.User;
 import info.firozansari.domain.exception.DefaultErrorBundle;
 import info.firozansari.domain.exception.ErrorBundle;

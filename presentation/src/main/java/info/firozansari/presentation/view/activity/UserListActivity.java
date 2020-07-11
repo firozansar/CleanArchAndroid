@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.view.Window;
 import info.firozansari.presentation.R;
 import info.firozansari.presentation.internal.di.HasComponent;
-import info.firozansari.presentation.internal.di.components.DaggerUserComponent;
 import info.firozansari.presentation.internal.di.components.UserComponent;
 import info.firozansari.presentation.model.UserModel;
 import info.firozansari.presentation.view.fragment.UserListFragment;

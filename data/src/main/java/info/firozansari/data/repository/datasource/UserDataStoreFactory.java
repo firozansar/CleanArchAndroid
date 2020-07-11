@@ -2,7 +2,7 @@
 package info.firozansari.data.repository.datasource;
 
 import android.content.Context;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 import info.firozansari.data.cache.UserCache;
 import info.firozansari.data.entity.mapper.UserEntityJsonMapper;
 import info.firozansari.data.net.RestApi;

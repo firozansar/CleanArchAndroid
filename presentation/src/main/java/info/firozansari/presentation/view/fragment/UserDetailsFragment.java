@@ -1,6 +1,7 @@
 
 package info.firozansari.presentation.view.fragment;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -9,10 +10,22 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import butterknife.Bind;
+
+import androidx.core.util.Preconditions;
+
+import javax.inject.Inject;
+
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-import javax.inject.Inject;
+import info.firozansari.presentation.R;
+import info.firozansari.presentation.internal.di.components.UserComponent;
+import info.firozansari.presentation.model.UserModel;
+import info.firozansari.presentation.presenter.UserDetailsPresenter;
+import info.firozansari.presentation.view.UserDetailsView;
+import info.firozansari.presentation.view.component.AutoLoadImageView;
+
+
 
 /**
  * Fragment that shows details of a certain user.
@@ -20,16 +33,18 @@ import javax.inject.Inject;
 public class UserDetailsFragment extends BaseFragment implements UserDetailsView {
   private static final String PARAM_USER_ID = "param_user_id";
 
-  @Inject UserDetailsPresenter userDetailsPresenter;
+  @Inject
+  UserDetailsPresenter userDetailsPresenter;
 
-  @Bind(R.id.iv_cover) AutoLoadImageView iv_cover;
-  @Bind(R.id.tv_fullname) TextView tv_fullname;
-  @Bind(R.id.tv_email) TextView tv_email;
-  @Bind(R.id.tv_followers) TextView tv_followers;
-  @Bind(R.id.tv_description) TextView tv_description;
-  @Bind(R.id.rl_progress) RelativeLayout rl_progress;
-  @Bind(R.id.rl_retry) RelativeLayout rl_retry;
-  @Bind(R.id.bt_retry) Button bt_retry;
+  @BindView(R.id.iv_cover)
+  AutoLoadImageView iv_cover;
+  @BindView(R.id.tv_fullname) TextView tv_fullname;
+  @BindView(R.id.tv_email) TextView tv_email;
+  @BindView(R.id.tv_followers) TextView tv_followers;
+  @BindView(R.id.tv_description) TextView tv_description;
+  @BindView(R.id.rl_progress) RelativeLayout rl_progress;
+  @BindView(R.id.rl_retry) RelativeLayout rl_retry;
+  @BindView(R.id.bt_retry) Button bt_retry;
 
   public static UserDetailsFragment forUser(int userId) {
     final UserDetailsFragment userDetailsFragment = new UserDetailsFragment();
@@ -75,7 +90,6 @@ public class UserDetailsFragment extends BaseFragment implements UserDetailsView
 
   @Override public void onDestroyView() {
     super.onDestroyView();
-    ButterKnife.unbind(this);
   }
 
   @Override public void onDestroy() {
@@ -131,6 +145,7 @@ public class UserDetailsFragment extends BaseFragment implements UserDetailsView
   /**
    * Get current user id from fragments arguments.
    */
+  @SuppressLint("RestrictedApi")
   private int currentUserId() {
     final Bundle arguments = getArguments();
     Preconditions.checkNotNull(arguments, "Fragment arguments cannot be null");
@@ -141,4 +156,6 @@ public class UserDetailsFragment extends BaseFragment implements UserDetailsView
   void onButtonRetryClick() {
     UserDetailsFragment.this.loadUserDetails();
   }
+
+
 }

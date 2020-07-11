@@ -2,11 +2,12 @@
 package info.firozansari.presentation.view.adapter;
 
 import android.content.Context;
-import android.support.v7.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 
 /**
- * Layout manager to position items inside a {@link android.support.v7.widget.RecyclerView}.
+ * Layout manager to position items inside a {@link RecyclerView}.
  */
 public class UsersLayoutManager extends LinearLayoutManager {
   public UsersLayoutManager(Context context) {
