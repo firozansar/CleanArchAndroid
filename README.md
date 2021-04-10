@@ -15,12 +15,3 @@ The architecture is based on Robert C. Martin's (Uncle Bob) original [Clean Arch
 Domain contains the Entities which in this case are data classes with app wide logic and data. Use cases are the business operations on the Entities which are invoked by the presentation layer for display and fulfilled by the data layer. The domain has interfaces which are implemented by outer layers such as MovieRepository and data structures of UseCase Input and UseCase Output to define the boundaries between the domain and other layers.
 The presentation and data layers are only aware of the domain layer and not each other. Mappers are used by the data layer to convert API responses, database results etc. from the data layer to the domain layer.
 
-Useful Articles
--
-[Clean Architecture Guide (with tested examples): Data Flow != Dependency Rule](https://proandroiddev.com/clean-architecture-data-flow-dependency-rule-615ffdd79e29)
-
-[The death of Presenters and the rise of ViewModels (AAC)](https://proandroiddev.com/the-death-of-presenters-and-the-rise-of-viewmodels-aac-f14d54b419a)
-
-[Intro to App Architecture](https://proandroiddev.com/intro-to-app-architecture-922b392b21b2)
-
-[Intro to App Modularization](https://proandroiddev.com/intro-to-app-modularization-42411e4c421e)
