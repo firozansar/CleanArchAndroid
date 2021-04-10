@@ -25,24 +25,71 @@ android {
 
 
 dependencies {
-    implementation project(':domain')
+    implementation project(':core')
     implementation project(':data')
+    implementation project(':domain')
 
-    //dagger
-    implementation "com.google.dagger:dagger:2.16"
-    annotationProcessor "com.google.dagger:dagger-compiler:2.16"
-    kapt 'com.google.dagger:dagger-compiler:2.16'
+    // AndroidX
+    implementation "androidx.activity:activity:${versions.androidX.activity}"
+    implementation "androidx.appcompat:appcompat:${versions.androidX.appCompat}"
+    implementation "androidx.core:core-ktx:${versions.androidX.coreKtx}"
+    implementation "androidx.constraintlayout:constraintlayout:${versions.androidX.constraintLayout}"
+    implementation "androidx.fragment:fragment:${versions.androidX.fragment}"
+    implementation "androidx.lifecycle:lifecycle-extensions:${versions.androidX.lifecycle}"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-savedstate:{versions.androidX.lifecycle}"
+    implementation "androidx.swiperefreshlayout:swiperefreshlayout:${versions.androidX.swiperefreshlayout}"
+    implementation "androidx.navigation:navigation-fragment-ktx:${versions.androidX.navigation}"
+    implementation "androidx.navigation:navigation-ui-ktx:${versions.androidX.navigation}"
+    implementation "com.google.android.material:material:${versions.google.material}"
 
-    //support library
-    implementation 'androidx.appcompat:appcompat:1.0.0'
-    implementation 'com.google.android.material:material:1.0.0'
-    implementation 'androidx.recyclerview:recyclerview:1.0.0'
+    // Dagger
+    implementation "com.google.dagger:dagger:${versions.dagger}"
+    implementation "com.google.dagger:dagger-android:${versions.dagger}"
+    implementation "com.google.dagger:dagger-android-support:${versions.dagger}"
+    kapt "com.google.dagger:dagger-compiler:${versions.dagger}"
+    kapt "com.google.dagger:dagger-android-processor:${versions.dagger}"
 
-    // RxJava2 Dependencies
-    implementation 'io.reactivex.rxjava2:rxjava:2.2.1'
-    implementation 'io.reactivex.rxjava2:rxandroid:2.1.0'
+    // AssistedInject
+    compileOnly "com.squareup.inject:assisted-inject-annotations-dagger2:${versions.assistedInject}"
+    kapt "com.squareup.inject:assisted-inject-processor-dagger2:${versions.assistedInject}"
 
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0'
+    // Retrofit
+    implementation "com.squareup.retrofit2:retrofit:${versions.retrofit}"
+    implementation "com.squareup.retrofit2:converter-gson:${versions.retrofit}"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:${versions.retrofit}"
+
+    // OkHttp
+    implementation "com.squareup.okhttp3:okhttp:${versions.okhttp}"
+    implementation "com.squareup.okhttp3:logging-interceptor:${versions.okhttp}"
+
+    // Rx
+    implementation "io.reactivex.rxjava2:rxjava:${versions.rx.rxJava}"
+    implementation "io.reactivex.rxjava2:rxandroid:${versions.rx.rxAndroid}"
+    implementation "io.reactivex.rxjava2:rxkotlin:${versions.rx.rxKotlin}"
+
+    // Moshi
+    implementation "com.squareup.moshi:moshi:${versions.moshi}"
+    kapt "com.squareup.moshi:moshi-kotlin-codegen:${versions.moshi}"
+
+    // Glide
+    implementation "com.github.bumptech.glide:glide:${versions.glide}"
+
+    // Unit Testing
+    testImplementation "junit:junit:${versions.junit}"
+    testImplementation "com.nhaarman.mockitokotlin2:mockito-kotlin:${versions.mockitoKotlin}"
+    testImplementation "com.google.truth:truth:${versions.google.truth}"
+    testImplementation "androidx.arch.core:core-testing:${versions.androidX.coreTesting}"
+    testImplementation "com.squareup.okhttp3:mockwebserver:${versions.okhttp}"
+
+    // UI Testing
+    androidTestImplementation "androidx.test:runner:${versions.androidX.testRunner}"
+    androidTestImplementation "androidx.test:rules:${versions.androidX.testRules}"
+    androidTestImplementation "androidx.test.espresso:espresso-core:${versions.androidX.espressoCore}"
+    androidTestImplementation "androidx.test.espresso:espresso-contrib:${versions.androidX.espressoCore}"
+    androidTestImplementation "androidx.test.espresso:espresso-intents:${versions.androidX.espressoCore}"
+    androidTestImplementation "com.squareup.okhttp3:mockwebserver:${versions.okhttp}"
+    androidTestImplementation "com.squareup.rx.idler:rx2-idler:${versions.rxIdler}"
+    androidTestImplementation "com.nhaarman.mockitokotlin2:mockito-kotlin:${versions.mockitoKotlin}"
+    androidTestImplementation "org.mockito:mockito-android:${versions.mockitoAndroid}"
+    androidTestImplementation "com.google.truth:truth:${versions.google.truth}"
 }
