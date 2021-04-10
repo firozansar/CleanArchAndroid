@@ -4,7 +4,7 @@ Work in progress...
 
 ### Clean Architecture Description and Implementation
 
-This project uses MVI with Clean Architecture
+This project is my attempt to write a modular Android app using MVI Clean Architecture
 
 The architecture is based on Robert C. Martin's (Uncle Bob) original [Clean Architecture blog post](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html) and accompanying schematic diagram. It stresses a design which is based on inversion of control and enforcing inner layers knowing nothing about how they are being used in the outer layers. This is composed of 3 different layers:
 
